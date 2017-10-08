@@ -1,5 +1,7 @@
 package com.ann.test;
 
+import com.ann.sql.interfaces.Description;
+
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 
@@ -31,6 +33,9 @@ public class ParserAnno {
             System.out.println("---------------------");
 
             for (Method method : methods) {
+                method.getParameterTypes();//参数类型
+                method.getParameterCount();//参数数量
+
                 Annotation[] as = method.getAnnotations();
                 for (Annotation a : as) {
                     if (a instanceof Description) {

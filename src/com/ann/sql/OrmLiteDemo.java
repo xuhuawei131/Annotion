@@ -48,7 +48,7 @@ public class OrmLiteDemo {
                 Column column = field.getAnnotation(Column.class);
                 String columnName = column.value();//拿到字段名
                 String fieldName = columnName;
-//               String fieldName = field.getName();
+//               String fieldName = field.getName();//这个只能获取字段名称  如果 你的注解 不是 字段名称 那就废废了
                 Object fieldValue = null;
                 try {
                     field.setAccessible(true);
@@ -58,12 +58,12 @@ public class OrmLiteDemo {
                 }
                 //或者先用下面 的方式 访问数据 通过数据的 get方法获取数据值
 //                String getMethodName = "get" + fieldName.substring(0, 1).toUpperCase() + fieldName.substring(1);
-//                Object fieldValue=null;
 //                try {
 //                    Method getMethod = c.getMethod(getMethodName);
 //                    fieldValue=getMethod.invoke(filter);
 //                } catch (Exception e) {
 //                }
+
                 if (fieldValue == null || (fieldValue instanceof Integer && (Integer) fieldValue == 0)) {
                     continue;
                 }

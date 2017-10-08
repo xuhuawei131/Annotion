@@ -1,4 +1,4 @@
-package com.ann.test;
+package com.ann.sql.interfaces;
 
 import java.lang.annotation.*;
 
